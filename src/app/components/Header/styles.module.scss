@@ -1,0 +1,50 @@
+
+
+.containerHeader{
+    width: 100%;
+    padding: 1.1rem;
+    background-color: #FFFFFF;
+
+    .containerNav{
+        display: flex;
+        align-items: center;
+        width: 90%;
+        margin: auto;
+        justify-content: space-between;
+        .containerLogo{
+           img{
+            height: 3.5vh;
+           }
+        }
+        .containerFiltro{
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            border-radius: 0.25rem;
+            border:none;
+            
+            .filtro{
+                display: flex;
+                align-items: center;
+                gap: 0.3rem;
+                border-radius: 0.45rem;
+                border:none;
+                background-color: #F3F5F6;
+                height: 37px;
+                width: 352px;
+                input{
+                    padding: 0.5rem;
+                    background-color: #F3F5F6;
+                    border: none;
+                    outline: none;
+                    border-radius: 0.45rem;
+                    height: 100%;
+                    width: 90%;
+                }
+            }
+            
+        }
+
+    }
+  
+}
