@@ -1,9 +1,14 @@
-import Image from 'next/image'
-import styles from './page.module.css'
-import { Catalogo } from '@/pages/Catalogo/page'
+'use client'
+
+import { Catalogo } from '@/app/pages/Catalogo/page'
+import { QueryClientProvider, QueryClient } from 'react-query'
+
+const queryClient = new QueryClient()
 
 export default function Home() {
   return (
-    <Catalogo />
+    <QueryClientProvider client={queryClient}>
+        <Catalogo />
+    </QueryClientProvider>
   )
 }
