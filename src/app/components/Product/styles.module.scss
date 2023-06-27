@@ -1,0 +1,27 @@
+
+
+.containerCard{
+    width: 21vw;
+    background-color: #FFFFFF66;
+    border-radius: 8px, 8px;
+
+    img{
+        width: 100%;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        height: 40vh;
+    }
+    .name,.price{
+        color: #41414D;
+    }
+    .containerText{
+        padding: 0.5rem;
+    }
+    .line{
+        height: 1px;
+        background-color: #DCE2E5;
+    }
+    .containerInfos{
+        padding: 0.8rem;
+    }
+}
