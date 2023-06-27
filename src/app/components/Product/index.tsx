@@ -1,3 +1,4 @@
+import { formatPrice } from "@/app/utils/formatCurrency";
 import styles from "./styles.module.scss";
 
 interface ProductProps {
@@ -7,12 +8,7 @@ interface ProductProps {
 }
 
 export function Product({ imgSrc, name, price }: ProductProps) {
-  function formatCurrent(valor: number) {
-    return new Intl.NumberFormat("pt-BR", {
-      style: "currency",
-      currency: "BRL",
-    }).format(valor);
-  }
+
 
   return (
     <div className={styles.containerCard}>
@@ -25,7 +21,7 @@ export function Product({ imgSrc, name, price }: ProductProps) {
         <div className={styles.line}></div>
 
         <div className={styles.containerText}>
-          <span className={styles.price}>{formatCurrent(price)}</span>
+          <span className={styles.price}>{formatPrice(price)}</span>
         </div>
       </div>
     </div>
