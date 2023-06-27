@@ -5,7 +5,7 @@ import styles from './styles.module.scss'
 export function Containerproducts(){
 
     const {listaProdutos} = useProducts()
-    console.log(listaProdutos)
+
     return(
         <section className={styles.containerProducts}>
            {
