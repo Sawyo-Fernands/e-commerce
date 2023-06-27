@@ -1,12 +1,54 @@
-
+.containerMain{
+    width: 90%;
+    margin: auto;
+}
 .containerProducts{
     display: flex;
     align-items: center;
     gap: 1rem;
     flex-wrap: wrap;
-    width: 90%;
-    margin: auto;
+
     height: 100%;
     padding: 0.5rem;
     justify-content: center;
+}
+
+.containerFilters{
+    padding: 1rem;
+    display: flex;
+    margin-top: 4.5rem;
+    
+    .containerCategory{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        .category{
+            span{
+                text-transform: uppercase;
+                font-weight: bold;
+                color: #737380;
+                cursor: pointer;
+
+                @media(max-width:800px){
+                    font-size: 0.8rem;
+                }
+            }
+        }
+        .activeCategory{
+            span{
+                text-transform: uppercase;
+                font-weight: bold;
+                color: #737380;
+                cursor: pointer;
+                margin-bottom: 0.3rem;
+                border-bottom: 2px solid #FFA585;
+
+                @media(max-width:800px){
+                    font-size: 0.8rem;
+                }
+            }
+        }
+     
+    }
 }

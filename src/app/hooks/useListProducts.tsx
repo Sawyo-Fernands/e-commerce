@@ -6,7 +6,8 @@ type Produto = {
   id: string,
   name: string,
   price_in_cents: number,
-  image_url: string
+  image_url: string,
+  category:string,
 }
 
 
@@ -22,6 +23,7 @@ export function useProducts(){
                     name
                     price_in_cents
                     image_url
+                    category
                   }
                 }
               `

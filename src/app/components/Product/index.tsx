@@ -7,10 +7,12 @@ interface ProductProps {
 }
 
 export function Product({ imgSrc, name, price }: ProductProps) {
-
-    function formatCurrent(valor:number){
-        return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valor)
-    }
+  function formatCurrent(valor: number) {
+    return new Intl.NumberFormat("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    }).format(valor);
+  }
 
   return (
     <div className={styles.containerCard}>
