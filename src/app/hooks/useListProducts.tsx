@@ -2,12 +2,18 @@ import { useState } from "react";
 import { useQuery } from "react-query";
 import { apiAxios } from "../services/api";
 
+type Produto = {
+  id: string,
+  name: string,
+  price_in_cents: number,
+  image_url: string
+}
 
 
 export function useProducts(){
 
     function getDataProducts(){
-        apiAxios.get('/', {
+        return apiAxios.get('/', {
             params: {
               query: `
                 query {
@@ -20,11 +26,11 @@ export function useProducts(){
                 }
               `
             }
-          })
+          }).then(response => response.data);
     }
 
-    const {isLoading,isError,data :listaProdutos} = useQuery(['listaProdutos',{}],getDataProducts,{})
-    
+    const {isLoading,isError,data } = useQuery<any>(['listaProdutos',{}],getDataProducts,{})
+    const listaProdutos: Produto[] = data?.data?.allProducts ?? [];
     return { isLoading, isError, listaProdutos }
 
 }

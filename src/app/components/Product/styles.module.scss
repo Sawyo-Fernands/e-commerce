@@ -1,0 +1,39 @@
+
+
+.containerCard{
+    width: 22%;
+    background-color: #FFFFFF66;
+    border-radius: 8px, 8px;
+    box-sizing: border-box;
+    img{
+        width: 100%;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        height: 40vh;
+    }
+    .name{
+        color: #41414D;
+    }
+    .price{
+        font-weight: bold;
+        color: #09090A;
+    }
+    .containerText{
+        padding: 0.5rem;
+    }
+    .line{
+        height: 1px;
+        background-color: #DCE2E5;
+    }
+    .containerInfos{
+        padding: 0.8rem;
+    }
+
+
+    @media (min-width:1490px) {
+        width: 399px;
+    }
+    @media (max-width:1490px) {
+        width: 315px;
+    }
+}
