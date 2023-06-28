@@ -1,4 +1,6 @@
+import { formatPrice } from "@/utils/formatCurrency";
 import styles from "./styles.module.scss";
+import Link from "next/link";
 
 interface ProductProps {
   imgSrc: string;
@@ -7,14 +9,9 @@ interface ProductProps {
 }
 
 export function Product({ imgSrc, name, price }: ProductProps) {
-  function formatCurrent(valor: number) {
-    return new Intl.NumberFormat("pt-BR", {
-      style: "currency",
-      currency: "BRL",
-    }).format(valor);
-  }
 
   return (
+   <Link href={'/Product'}>
     <div className={styles.containerCard}>
       <img src={imgSrc} alt={name} />
       <div className={styles.containerInfos}>
@@ -25,9 +22,10 @@ export function Product({ imgSrc, name, price }: ProductProps) {
         <div className={styles.line}></div>
 
         <div className={styles.containerText}>
-          <span className={styles.price}>{formatCurrent(price)}</span>
+          <span className={styles.price}>{formatPrice(price)}</span>
         </div>
       </div>
     </div>
+   </Link>
   );
 }

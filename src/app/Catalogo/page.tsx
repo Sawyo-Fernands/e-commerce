@@ -1,9 +1,9 @@
 'use client'
 
-import { Header } from '@/app/components/Header'
+import { Header } from '@/components/Header'
 import styles from './style.module.scss'
-import { Containerproducts } from '@/app/components/ContainerProducts'
 import { useState } from 'react'
+import { Containerproducts } from '@/components/ContainerProducts'
 
 
 export function Catalogo(){
