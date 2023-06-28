@@ -1,10 +1,10 @@
-import { useProducts } from "@/app/hooks/useListProducts";
 import { Product } from "../Product";
 import styles from './styles.module.scss'
 import { useState } from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { Menu, Item, useContextMenu } from 'react-contexify';
 import 'react-contexify/ReactContexify.css';
+import { useProducts } from "@/hooks/useListProducts";
 
 const MENU_ID = 'menuContextOrdem';
 interface ContainerInputsProps{

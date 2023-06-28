@@ -1,5 +1,6 @@
-import { formatPrice } from "@/app/utils/formatCurrency";
+import { formatPrice } from "@/utils/formatCurrency";
 import styles from "./styles.module.scss";
+import Link from "next/link";
 
 interface ProductProps {
   imgSrc: string;
@@ -9,8 +10,8 @@ interface ProductProps {
 
 export function Product({ imgSrc, name, price }: ProductProps) {
 
-
   return (
+   <Link href={'/Product'}>
     <div className={styles.containerCard}>
       <img src={imgSrc} alt={name} />
       <div className={styles.containerInfos}>
@@ -25,5 +26,6 @@ export function Product({ imgSrc, name, price }: ProductProps) {
         </div>
       </div>
     </div>
+   </Link>
   );
 }

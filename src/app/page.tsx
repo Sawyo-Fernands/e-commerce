@@ -1,8 +1,8 @@
 'use client'
 
-import { Catalogo } from '@/app/pages/Catalogo/page'
 import { QueryClientProvider, QueryClient } from 'react-query'
 import { Saira } from "@next/font/google";
+import { Catalogo } from './Catalogo/page';
 
 const queryClient = new QueryClient()
 
