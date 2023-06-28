@@ -16,7 +16,6 @@ type Produto = {
     price_in_cents: number,
     image_url: string,
     category:string,
-    sales:number
   }
 export function Containerproducts({filtroCatalogo}:ContainerInputsProps){
 
@@ -39,16 +38,32 @@ export function Containerproducts({filtroCatalogo}:ContainerInputsProps){
       const handleItemClick = ({ id, event, props } : any) => {
         switch (id) {
           case "maior":
-            setFiltro("maiorValor")
+            setFiltro({
+                filter:"",
+                sortField:"prices_in_cents",
+                sortOrder:'DSC'
+            })
             break;
           case "menor":
-            setFiltro("menorValor")
+            setFiltro({
+                filter:"",
+                sortField:"prices_in_cents",
+                sortOrder:'ASC'
+            })
             break;
             case "vendidos":
-                setFiltro("maisVendidos")
+                setFiltro({
+                    filter:"",
+                    sortField:"sales",
+                    sortOrder:'DSC'
+                })
                 break;
                 case "novidades":
-                setFiltro("padrao")
+                    setFiltro({
+                        filter:"",
+                        sortField:"",
+                        sortOrder:''
+                    })
                 break;
         }
       }
@@ -107,6 +122,7 @@ export function Containerproducts({filtroCatalogo}:ContainerInputsProps){
                 imgSrc={element.image_url} 
                 name={element.name}
                  price={element.price_in_cents}
+                 props={element}
                   />
             ))
            }     

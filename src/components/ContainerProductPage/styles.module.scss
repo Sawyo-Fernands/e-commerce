@@ -1,0 +1,36 @@
+
+
+.containerMain{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+
+    section{
+        width: 100%;
+    }
+    .containerReturn{
+        padding: 0.8rem;
+        display: flex;
+        align-items: center;
+
+        div{
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+
+            span{
+                color: #41414D;
+            }
+        }
+       
+
+    }
+    .containerProduc{
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+}
