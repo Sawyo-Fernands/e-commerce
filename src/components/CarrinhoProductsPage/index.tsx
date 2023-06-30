@@ -5,6 +5,7 @@ import { MdArrowCircleLeft } from "react-icons/md";
 import { useContext } from "react";
 import { ProductCarrinhoContext } from "@/context/useProductsCarrinho";
 import { ProdutoCarrinho } from "../ProdutoCarrinho";
+import { TotalComprasCarrinho } from "../TotalComprasCarrinho";
 
 export function CarrinhoComponent() {
 
@@ -35,7 +36,9 @@ export function CarrinhoComponent() {
             }
         </div>
       </div>
-      <div className={styles.containerInfosPagamento}></div>
+      <div className={styles.containerInfosPagamento}>
+        <TotalComprasCarrinho />
+      </div>
     </main>
   );
 }

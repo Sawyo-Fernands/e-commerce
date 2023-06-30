@@ -1,0 +1,87 @@
+
+
+.containerContent{
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 0.25rem;
+    height: 100%;
+    background-color: white;
+    position: relative;
+    .containerTitle{
+        width: 100%;
+        text-align: left;
+        h2{
+            font-weight: bold;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+        }
+    }
+    .containerInfosTotais{
+        margin-top: 3rem;
+
+        .totals{
+            margin-top: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            span{
+                font-size: 1.1rem;
+                color: #41414D;
+            }
+        }
+        .totalsSoma{
+            margin-top: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            span{
+                font-size: 1.1rem;
+                color: #41414D;
+                font-weight: bold;
+            }
+        }
+
+        .line{
+            height: 1px;
+            width: 100%;
+            background-color: #DCE2E5;
+            margin-top: 1.7rem;
+        }
+        .containerButton{
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+
+            button{
+                outline: none;
+                text-transform: uppercase;
+                color: #F5F5FA;
+                padding: 20px;
+                border-radius: 0.25rem;
+                border: none;
+                width: 100%;
+                font-weight: bold;
+                background-color: #51B853;
+                font-size: 1.05rem;
+                cursor: pointer;
+                transition: .1s;
+
+                &:hover{
+                    background-color: #5ace5ce0;
+                }
+            }
+        }
+        .moreInfos{
+            width: 100%;
+            display: flex;
+            gap: 1rem;
+            flex-direction: column;
+            text-align: left;
+            position: absolute;
+            bottom: 15px;
+            span{   
+                text-transform: uppercase;
+                font-size: 0.9rem;
+            }
+        }
+    }
+}
