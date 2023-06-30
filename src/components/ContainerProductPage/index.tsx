@@ -65,7 +65,8 @@ export function ContainerProductPage({idProduto}:{idProduto:string}) {
             </div>
             <div className={styles.containerDescricao}>
                 <h4>Descrição</h4>
-                <p>{produto.description}</p>
+                {/* Repetir duas vezes para ter mais texto para preencher o layout */}
+                <p>{produto.description}{produto.description}</p>
             </div>
             <div className={styles.containerAddProduct}>
                 <button onClick={adicionarItemCarrinho}>  <img src="loja.svg" alt="" style={{color:"white"}} /> Adicionar ao carrinho</button>
