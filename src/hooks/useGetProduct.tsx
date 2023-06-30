@@ -12,21 +12,23 @@ type Produto = {
   price_in_cents: number;
   image_url: string;
   category: string;
+  description:string;
 };
 
-export function useProducts() {
-  const [filtro, setFiltro] = useState({
+export function useGetProduct(id: string,anotherParams:string) {
+  const filtro = {
     sortField: "",
     sortOrder: "",
-    filter: "",
-  });
+    filter: `id: "${id}"`,
+  };
 
+  const filtroReturn = getFiltro(filtro, anotherParams)
   const { isLoading, isError, data, refetch } = useQuery<any>(
-    ["listaProdutos", getFiltro(filtro, "")],
-    async () => await getDataProducts(filtro),
+    ["listaProduto", filtroReturn],
+    async () => await getDataProducts(filtro,anotherParams),
     {}
   );
 
-  const listaProdutos: Produto[] = data?.data?.data.allProducts ?? [];
-  return { isLoading, isError, listaProdutos, setFiltro };
+  const produto: Produto = data?.data?.data.allProducts[0] ?? [];
+  return { isLoading, isError, produto };
 }
