@@ -2,15 +2,18 @@
 
 .containerMain{
     width: 90%;
+    height: 90vh;
     margin: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 90vh;
+    margin-top: 4.5rem;
 
     section{
         width: 100%;
+        height: 100%;
     }
+
     .containerReturn{
         padding: 0.8rem;
         display: flex;
@@ -30,7 +33,109 @@
     }
     .containerProduc{
         display: flex;
-        align-items: center;
-        gap: 0.5rem;
+        gap: 3rem;
+
+        @media(max-width:980px){
+            flex-direction: column;
+        }
+
+        .containerImage{
+            height: 62vh;
+
+            @media(max-width:980px){
+                width: 100%;
+                height: 100%;
+            }
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    
+    .containerInfos{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        height: 62vh;
+        justify-content: space-between;
+        @media(max-width:980px){
+            width: 100%;
+            height: 100%;
+        }
+        .containerCategory{
+            padding: 0rem 0.8rem 1.5rem 0.8rem;
+            span{
+                font-size: 1.2rem;
+                color: #41414D;
+            }
+        }
+        .containerNameProduct{
+            padding: 0rem 0.8rem;
+            h1{
+                font-size: 1.8rem;
+                font-weight: normal;
+                color: #41414D;
+                line-height: 48px;
+            }
+            .containerPriceProduct{
+                padding: 0.7rem 0rem;
+                h4{
+                    font-weight: 600;
+                    font-size: 1.2rem;
+                    line-height: 30px;
+                }
+            }
+      
+        }
+        .containerInfoGeral{
+            padding: 0rem 0.8rem;
+            margin: 2rem 0rem;
+            span{
+                color: #41414D;
+            }
+        }
+        .containerDescricao{
+            padding: 0rem 0.8rem;
+            margin: 2rem 0rem;
+            color: #41414D;
+            h4{
+                font-weight: 500;
+                text-transform: uppercase;
+                font-size: 1.1rem;
+                padding: 0.8rem;
+                line-height: 24px;
+            }
+            p{
+                padding: 0rem 0.8rem;
+                text-align: left;
+                line-height: 21px;
+            }
+        }
+        .containerAddProduct{
+            padding: 0.2rem 0.8rem;
+            width: 100%;
+            button{
+                text-transform: uppercase;
+                font-weight: 600;
+                text-align: center;
+                width: 100%;
+                outline: none;
+                border: none;
+                cursor: pointer;
+                color:#F5F5FA;
+                background-color:#115D8C;
+                border-radius: 4px;
+                padding: 18px;
+                display: flex;
+                align-items: center;
+                gap: 0.4rem;
+                justify-content: center;
+                transition: .1s;
+                &:hover{
+                    background-color: #1875af;
+                }
+            }
+        }
     }
 }

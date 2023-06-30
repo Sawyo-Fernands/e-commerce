@@ -5,11 +5,18 @@
     background-color: #FFFFFF66;
     border-radius: 8px, 8px;
     box-sizing: border-box;
+    transition: .2s;
+    cursor: pointer;
     img{
         width: 100%;
         border-top-left-radius: 8px;
         border-top-right-radius: 8px;
         height: 40vh;
+    }
+
+    &:hover { 
+        transform: translateY(-4px); 
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.322); 
     }
     .name{
         color: #41414D;

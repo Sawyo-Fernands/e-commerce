@@ -1,11 +1,17 @@
 'use client'
 
-import { ProviderProduct } from "@/context/useProductContext";
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Saira } from "@next/font/google";
 import { QueryClientProvider, QueryClient } from "react-query";
+import { ProviderProductCarrinho } from "@/context/useProductsCarrinho";
+import 'react-toastify/dist/ReactToastify.css';
 
-const inter = Inter({ subsets: ["latin"] });
+const saira = Saira({
+  weight: "400",
+  display: "swap",
+  subsets:['latin']
+});
+
 const queryClient = new QueryClient();
 
 export const metadata = {
@@ -20,11 +26,11 @@ export default function RootLayout({
 }) {
   return (
     <QueryClientProvider client={queryClient}>
-      <ProviderProduct>
-        <html lang="en">
-          <body className={inter.className}>{children}</body>
-        </html>
-      </ProviderProduct>
+        <ProviderProductCarrinho>
+          <html lang="en">
+            <body className={saira.className}>{children}</body>
+          </html>
+        </ProviderProductCarrinho>
     </QueryClientProvider>
   );
 }

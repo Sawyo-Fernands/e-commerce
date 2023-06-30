@@ -3,8 +3,7 @@
 import { formatPrice } from "@/utils/formatCurrency";
 import styles from "./styles.module.scss";
 import Link from "next/link";
-import { useContext } from "react";
-import { ProductContext } from "@/context/useProductContext";
+import { useRouter } from 'next/navigation'
 
 interface ProductProps {
   imgSrc: string;
@@ -23,11 +22,12 @@ type product = {
 
 export function Product({ imgSrc, name, price,props }: ProductProps) {
 
-  const { setProductId } = useContext(ProductContext)
+  const router = useRouter()
 
   return (
-   <Link href={'/Product'} style={{textDecoration:"none"}}>
-    <div className={styles.containerCard} onClick={()=>setProductId(props.id)}>
+    <div title={`${props.category} - ${name}`} className={styles.containerCard} onClick={()=>{
+      router.push("/product?id=" + props.id)
+      }}>
       <img src={imgSrc} alt={name} />
       <div className={styles.containerInfos}>
         <div className={styles.containerText}>
@@ -41,6 +41,6 @@ export function Product({ imgSrc, name, price,props }: ProductProps) {
         </div>
       </div>
     </div>
-   </Link>
+
   );
 }

@@ -12,6 +12,7 @@ type Produto = {
   price_in_cents: number;
   image_url: string;
   category: string;
+  description:string;
 };
 
 export function useGetProduct(id: string,anotherParams:string) {
