@@ -3,6 +3,8 @@
 import {MdSearch} from 'react-icons/md'
 import styles from './styles.module.scss'
 import { useRouter } from 'next/navigation';
+import { useContext } from 'react';
+import { ProductCarrinhoContext } from '@/context/useProductsCarrinho';
 
 interface HeaderProps{
     filtroCatalogo?:string;
@@ -12,6 +14,8 @@ interface HeaderProps{
 export function Header({filtroCatalogo,setFiltroCatalogo}:HeaderProps){
 
     const router = useRouter()
+    const { products } = useContext(ProductCarrinhoContext)
+
 
     return(
         <header className={styles.containerHeader}>
@@ -27,6 +31,7 @@ export function Header({filtroCatalogo,setFiltroCatalogo}:HeaderProps){
                         <MdSearch size={18} />
                     </div>
                     <div className={styles.containerIconeCarrinho}>
+                        {products.length > 0 && <div className={styles.containerNumberCarrinho}><span>{products.length  ?? '' }</span></div>}
                         <img src="shopping-bag.svg" alt="" onClick={()=>router.push('/Carrinho')} />
                     </div>
                 </div>

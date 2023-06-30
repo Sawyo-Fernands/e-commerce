@@ -58,6 +58,7 @@
             
         }
         .containerIconeCarrinho{
+            position: relative;
             img{
                 cursor: pointer;
             }
@@ -65,4 +66,23 @@
 
     }
   
+}
+
+.containerNumberCarrinho{
+    background-color: #CD1818;
+    clip-path: circle();
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: -4px;
+    right:-10px;
+
+    span{
+        color: white;
+        font-size: 0.8rem;
+        font-weight: bold;
+    }
 }
