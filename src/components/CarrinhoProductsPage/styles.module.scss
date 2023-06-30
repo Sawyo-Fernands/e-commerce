@@ -1,0 +1,46 @@
+
+
+.containerMainCarrinho{
+    width: 90%;
+    margin: auto;
+    margin-top: 4.6rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .containerListProdutos{
+        width: 70%;
+        padding: 0.5rem;
+        height: 90vh;
+        overflow-y: auto;
+       
+
+        .containerReturn{
+            padding: 0.8rem;
+            display: flex;
+            align-items: center;
+    
+            div{
+                display: flex;
+                align-items: center;
+                gap: 0.2rem;
+    
+                span{
+                    color: #41414D;
+                }
+            }
+           
+    
+        }
+        .listProdutos{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-direction: column;
+        }
+    }
+    .containerInfosPagamento{
+        width: 30%;
+        padding: 0.5rem;
+    }
+}

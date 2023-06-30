@@ -2,6 +2,7 @@
 
 import {MdSearch} from 'react-icons/md'
 import styles from './styles.module.scss'
+import { useRouter } from 'next/navigation';
 
 interface HeaderProps{
     filtroCatalogo?:string;
@@ -9,6 +10,8 @@ interface HeaderProps{
 }
 
 export function Header({filtroCatalogo,setFiltroCatalogo}:HeaderProps){
+
+    const router = useRouter()
 
     return(
         <header className={styles.containerHeader}>
@@ -24,7 +27,7 @@ export function Header({filtroCatalogo,setFiltroCatalogo}:HeaderProps){
                         <MdSearch size={18} />
                     </div>
                     <div className={styles.containerIconeCarrinho}>
-                        <img src="shopping-bag.svg" alt="" />
+                        <img src="shopping-bag.svg" alt="" onClick={()=>router.push('/Carrinho')} />
                     </div>
                 </div>
             </nav>

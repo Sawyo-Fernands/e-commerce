@@ -22,9 +22,13 @@ export function ContainerProductPage({idProduto}:{idProduto:string}) {
     return categorys[category] ?? null
   }
   function adicionarItemCarrinho(){
+    function add(){
+      setProducts([...products,produto])
+      toast.success(`${produto.name} adicionado ao carrinho!`) 
+    }
     return products.find(element => element.id == produto.id) ? 
-     toast.info("Produto já adicionado ao carrinho!") 
-    :  setProducts([...products,produto])
+     toast.info(`${produto.name} já adicionado ao carrinho!`) 
+    :  add()
   }
   
 
