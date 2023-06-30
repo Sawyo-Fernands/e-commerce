@@ -1,10 +1,11 @@
 import { Product } from "../Product";
 import styles from "./styles.module.scss";
-import { useState } from "react";
+import { Suspense,useState } from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { Menu, Item, useContextMenu } from "react-contexify";
 import "react-contexify/ReactContexify.css";
 import { useProducts } from "@/hooks/useListProducts";
+import Loading from "@/app/loading";
 
 const MENU_ID = "menuContextOrdem";
 interface ContainerInputsProps {
@@ -18,7 +19,7 @@ type Produto = {
   category: string;
 };
 export function Containerproducts({ filtroCatalogo }: ContainerInputsProps) {
-  const { listaProdutos, setFiltro } = useProducts();
+  const { listaProdutos, setFiltro,isLoading } = useProducts();
   const [category, setCategory] = useState("");
 
   const { show } = useContextMenu({
@@ -130,17 +131,22 @@ export function Containerproducts({ filtroCatalogo }: ContainerInputsProps) {
           </Item>
         </Menu>
       </section>
-      <section className={styles.containerProducts}>
-        {produtosSearch.map((element) => (
-          <Product
-            key={element.id}
-            imgSrc={element.image_url}
-            name={element.name}
-            price={element.price_in_cents}
-            props={element}
-          />
-        ))}
-      </section>
+      
+        <section className={styles.containerProducts}>
+          {
+            isLoading && <Loading />
+          }
+          {produtosSearch.map((element) => (
+            <Product
+              key={element.id}
+              imgSrc={element.image_url}
+              name={element.name}
+              price={element.price_in_cents}
+              props={element}
+            />
+          ))}
+        </section>
+      
     </main>
   );
 }
