@@ -1,5 +1,5 @@
 "use client";
-import { useContext } from "react";
+import { Suspense, useContext } from "react";
 import styles from "./styles.module.scss";
 import { useGetProduct } from "@/hooks/useGetProduct";
 import { MdArrowCircleLeft } from "react-icons/md";
@@ -7,6 +7,7 @@ import Link from "next/link";
 import { formatPrice } from "@/utils/formatCurrency";
 import { ProductCarrinhoContext } from "@/context/useProductsCarrinho";
 import { ToastContainer, toast } from "react-toastify";
+import Loading from "@/app/loading";
 
 export function ContainerProductPage({idProduto}:{idProduto:string}) {
   const { products, setProducts } = useContext(ProductCarrinhoContext)
@@ -21,7 +22,9 @@ export function ContainerProductPage({idProduto}:{idProduto:string}) {
     return categorys[category] ?? null
   }
   function adicionarItemCarrinho(){
-    return products.find(element => element.id == produto.id) ?  toast.info("Produto já adicionado ao carrinho!") :  setProducts([...products,produto])
+    return products.find(element => element.id == produto.id) ? 
+     toast.info("Produto já adicionado ao carrinho!") 
+    :  setProducts([...products,produto])
   }
   
 
@@ -36,7 +39,8 @@ export function ContainerProductPage({idProduto}:{idProduto:string}) {
       pauseOnFocusLoss
       draggable
       />
-<main className={styles.containerMain}>
+      <Suspense fallback={<Loading />}>
+      <main className={styles.containerMain}>
       <section>
         <div className={styles.containerReturn}>
           <Link href={"/"} style={{textDecoration:"none"}}>
@@ -75,6 +79,8 @@ export function ContainerProductPage({idProduto}:{idProduto:string}) {
         </div>
       </section>
     </main>
+      </Suspense>
+
     </>
    
   );
