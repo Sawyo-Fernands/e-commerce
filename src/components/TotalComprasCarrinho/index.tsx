@@ -1,7 +1,24 @@
+'use client'
 import Link from "next/link";
 import styles from "./styles.module.scss";
+import { ProductCarrinhoContext } from "@/context/useProductsCarrinho";
+import { useContext } from "react";
+import { formatPrice } from "@/utils/formatCurrency";
 
 export function TotalComprasCarrinho() {
+
+  const { products } = useContext(ProductCarrinhoContext)
+
+  function returnTotalCarrinho(frete?:number){
+      const total = products.reduce((acc:number,product:{price_in_cents:number})=>{
+          acc += product.price_in_cents
+
+          return acc
+      },0)
+
+      return  frete ? formatPrice(total+frete) : formatPrice(total)
+  }
+
   return (
     <div className={styles.containerContent}>
       <div className={styles.containerTitle}>
@@ -10,17 +27,17 @@ export function TotalComprasCarrinho() {
       <div className={styles.containerInfosTotais}>
         <div className={styles.totals}>
           <span>Subtotal de Produtos</span>
-          <span>R$ 1.200</span>
+          <span>{returnTotalCarrinho()}</span>
         </div>
         <div className={styles.totals}>
           <span>Entrega</span>
-          <span>R$ 1.200</span>
+          <span>{returnTotalCarrinho(4000)}</span>
         </div>
 
         <div className={styles.line}></div>
         <div className={styles.totalsSoma}>
           <span>Total</span>
-          <span>R$ 1.200</span>
+          <span>{products.length > 0 ? returnTotalCarrinho(4000) : 'R$ 0,00'}</span>
         </div>
         <div className={styles.containerButton}>
           <button>Finalizar a compra</button>

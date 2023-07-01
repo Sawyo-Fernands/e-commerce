@@ -27,6 +27,7 @@ export function CarrinhoComponent() {
                 products.map((produto) => (
                     <ProdutoCarrinho 
                     key={produto.id}
+                    id={produto.id}
                     description={produto.description}
                     img={produto.image_url}
                     name={produto.name}

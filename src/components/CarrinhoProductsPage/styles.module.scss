@@ -7,12 +7,19 @@
     display: flex;
     gap: 1rem;
 
+    @media(max-width:1210px){
+            flex-direction: column;
+    }
+
     .containerListProdutos{
         width: 70%;
         padding: 0.5rem;
         height: 90vh;
         overflow-y: auto;
-       
+
+        @media(max-width:1210px){
+            width: 100%;
+         }
 
         .containerReturn{
             padding: 0.8rem;
@@ -41,5 +48,11 @@
     .containerInfosPagamento{
         width: 30%;
         padding: 0.5rem;
+
+
+         @media(max-width:1210px){
+            width: 100%;
+            position: inherit;
+         }
     }
 }
